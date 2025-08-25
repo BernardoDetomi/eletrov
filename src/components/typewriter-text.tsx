@@ -49,6 +49,17 @@ export default function TypewriterText({
       transition={{ duration: 0.5, delay }}
     >
       {displayText}
+      {showCursor && (
+        <motion.span
+          className="inline-block w-1 h-[1em] bg-current ml-1"
+          animate={{ opacity: [1, 0] }}
+          transition={{
+            duration: 0.5,
+            repeat: Infinity,
+            repeatType: 'reverse',
+          }}
+        />
+      )}
     </motion.div>
   );
 }
