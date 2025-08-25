@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Em Construção - Site em Desenvolvimento",
+  title: "EletroV",
   description: "O site está quase pronto. Em breve estará disponível.",
 };
 

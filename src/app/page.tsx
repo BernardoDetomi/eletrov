@@ -8,6 +8,18 @@ export default function Home() {
       
       {/* Main content */}
       <div className="relative z-10 text-center px-4">
+        {/* Eletrov Logo */}
+        <div className="mb-8">
+          <Image
+            src="/eletrov.png"
+            alt="Eletrov Logo"
+            width={200}
+            height={80}
+            className="mx-auto"
+            priority
+          />
+        </div>
+        
         {/* Main title */}
         <h1 className="text-6xl md:text-8xl font-bold text-white mb-4">
           EM CONSTRUÇÃO
