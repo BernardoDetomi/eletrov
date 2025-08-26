@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 interface FloatingElementProps {
   children: ReactNode;
@@ -18,11 +18,25 @@ export default function FloatingElement({
   duration = 3,
   delay = 0,
 }: FloatingElementProps) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const adjustedAmplitude = isMobile ? amplitude * 0.6 : amplitude;
+
   return (
     <motion.div
       className={className}
       animate={{
-        y: [-amplitude, amplitude, -amplitude],
+        y: [-adjustedAmplitude, adjustedAmplitude, -adjustedAmplitude],
       }}
       transition={{
         duration,

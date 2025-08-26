@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
 interface Particle {
@@ -33,6 +33,23 @@ export default function InteractiveBackground({
   const particlesRef = useRef<Particle[]>([]);
   const mouseRef = useRef({ x: -1000, y: -1000, isActive: false });
   const animationRef = useRef<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Ajustar configurações para mobile
+  const mobileParticleCount = Math.floor(particleCount * 0.5);
+  const mobileConnectionDistance = connectionDistance * 0.8;
+  const actualParticleCount = isMobile ? mobileParticleCount : particleCount;
+  const actualConnectionDistance = isMobile ? mobileConnectionDistance : connectionDistance;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -53,7 +70,7 @@ export default function InteractiveBackground({
     // Initialize particles
     const initParticles = () => {
       particlesRef.current = [];
-      for (let i = 0; i < particleCount; i++) {
+      for (let i = 0; i < actualParticleCount; i++) {
         const x = Math.random() * canvas.width;
         const y = Math.random() * canvas.height;
         particlesRef.current.push({
@@ -112,16 +129,16 @@ export default function InteractiveBackground({
         const particleA = particles[i];
 
         // Connect to mouse if close enough and mouse is active
-        if (mouse.isActive) {
+        if (mouse.isActive && !isMobile) { // Desabilitar interação mouse em mobile
           const distanceToMouse = Math.sqrt(
             (particleA.x - mouse.x) ** 2 + (particleA.y - mouse.y) ** 2
           );
 
-          if (distanceToMouse < connectionDistance) {
+          if (distanceToMouse < actualConnectionDistance) {
             ctx.beginPath();
             ctx.moveTo(particleA.x, particleA.y);
             ctx.lineTo(mouse.x, mouse.y);
-            const opacity = (1 - distanceToMouse / connectionDistance) * 0.8;
+            const opacity = (1 - distanceToMouse / actualConnectionDistance) * 0.8;
             ctx.strokeStyle = `rgba(139, 92, 246, ${opacity})`;
             ctx.stroke();
           }
@@ -133,11 +150,11 @@ export default function InteractiveBackground({
           const distance = Math.sqrt(
             (particleA.x - particleB.x) ** 2 + (particleA.y - particleB.y) ** 2
           );
-          if (distance < connectionDistance) {
+          if (distance < actualConnectionDistance) {
             ctx.beginPath();
             ctx.moveTo(particleA.x, particleA.y);
             ctx.lineTo(particleB.x, particleB.y);
-            const opacity = (1 - distance / connectionDistance) * 0.3;
+            const opacity = (1 - distance / actualConnectionDistance) * 0.3;
             ctx.strokeStyle = `rgba(139, 92, 246, ${opacity})`;
             ctx.stroke();
           }
@@ -151,13 +168,13 @@ export default function InteractiveBackground({
         ctx.fill();
 
         // Add glow effect near mouse (only if mouse is active and close)
-        if (mouse.isActive) {
+        if (mouse.isActive && !isMobile) {
           const distanceToMouse = Math.sqrt(
             (particle.x - mouse.x) ** 2 + (particle.y - mouse.y) ** 2
           );
 
-          if (distanceToMouse < connectionDistance) {
-            const glowIntensity = 1 - distanceToMouse / connectionDistance;
+          if (distanceToMouse < actualConnectionDistance) {
+            const glowIntensity = 1 - distanceToMouse / actualConnectionDistance;
             ctx.fillStyle = `rgba(139, 92, 246, ${glowIntensity * 0.3})`;
             ctx.beginPath();
             ctx.arc(

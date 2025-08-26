@@ -21,7 +21,7 @@ export default function SocialIcon({
       href={href}
       target={href.startsWith('http') ? '_blank' : undefined}
       rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-      className={`w-12 h-12 border-2 border-white rounded-full flex items-center justify-center text-white relative group ${className}`}
+      className={`w-10 h-10 sm:w-12 sm:h-12 border-2 border-white rounded-full flex items-center justify-center text-white relative group ${className}`}
       initial={{ opacity: 0, scale: 0, rotate: -180 }}
       whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
       viewport={{ once: true }}

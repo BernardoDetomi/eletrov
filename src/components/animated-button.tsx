@@ -23,7 +23,7 @@ export default function AnimatedButton({
 
   return (
     <motion.button
-      className={`font-semibold py-3 px-8 rounded-lg relative overflow-hidden group ${baseClasses} ${className}`}
+      className={`font-semibold py-2 px-6 sm:py-3 sm:px-8 rounded-lg relative overflow-hidden group text-sm sm:text-base ${baseClasses} ${className}`}
       onClick={onClick}
       initial={{ opacity: 0, y: 50, scale: 0.8 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}

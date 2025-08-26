@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import PageLoader from "@/components/page-loader";
+import MobileOptimizer from "@/components/mobile-optimizer";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -25,9 +26,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <MobileOptimizer />
         <PageLoader duration={2.5}>
           {children}
         </PageLoader>

@@ -27,9 +27,9 @@ export default function AnimatedProgressBar({
   }, [targetProgress, delay]);
 
   return (
-    <div className={`w-full max-w-md mx-auto mb-8 ${className}`}>
+    <div className={`w-full max-w-xs sm:max-w-md mx-auto mb-6 sm:mb-8 px-4 ${className}`}>
       <motion.div
-        className="flex justify-between text-white text-sm mb-2"
+        className="flex justify-between text-white text-xs sm:text-sm mb-2"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: delay }}
@@ -70,7 +70,7 @@ export default function AnimatedProgressBar({
       </div>
       
       <motion.div
-        className="text-center text-white text-sm mt-2"
+        className="text-center text-white text-xs sm:text-sm mt-2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: delay + duration + 0.5 }}

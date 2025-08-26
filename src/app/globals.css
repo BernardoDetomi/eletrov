@@ -25,3 +25,73 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  /* Disable horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Reduce motion for performance */
+  .touch-device * {
+    animation-duration: 0.5s !important;
+    transition-duration: 0.3s !important;
+  }
+  
+  /* Improve touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Prevent text selection on touch devices */
+.touch-device {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.5);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.8);
+}
+
+/* Responsive text for construction title */
+@media (max-width: 479px) {
+  .construction-title {
+    font-size: 1.25rem !important; /* 20px */
+    line-height: 1.2 !important;
+    word-break: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 639px) {
+  .construction-title {
+    font-size: 1.5rem !important; /* 24px */
+    line-height: 1.2 !important;
+    white-space: nowrap;
+  }
+}
