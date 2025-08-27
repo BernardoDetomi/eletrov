@@ -3,7 +3,7 @@
 
 Site oficial da Eletrov: [https://eletrov.com](https://eletrov.com)
 
-Este é o repositório do site institucional da Eletrov, desenvolvido com Next.js e focado em uma experiência moderna, responsiva e otimizada para dispositivos móveis.
+Este é o repositório do site oficial da empresa Eletrov, desenvolvido com Next.js e focado em uma experiência moderna, responsiva e otimizada para dispositivos móveis.
 
 
 ## Características
