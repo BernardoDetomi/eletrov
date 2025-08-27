@@ -1,14 +1,19 @@
-# Eletrov - Site em Construção
 
-Este é um projeto Next.js que apresenta uma página "em construção" para o site da Eletrov.
+# Eletrov
+
+Site oficial da Eletrov: [https://eletrov.com](https://eletrov.com)
+
+Este é o repositório do site institucional da Eletrov, desenvolvido com Next.js e focado em uma experiência moderna, responsiva e otimizada para dispositivos móveis.
+
 
 ## Características
 
 - Design moderno e responsivo
-- Página "em construção" com barra de progresso
-- Seções separadas para Eletrov e BMD
-- Ícones de redes sociais (Facebook, LinkedIn, Instagram, Twitter, GitHub)
+- Página principal com animações e barra de progresso
+- Elementos interativos e otimizados para mobile
+- Ícones de redes sociais (Instagram, GitHub, etc.)
 - Link direto para o Instagram da Eletrov (@eletrovenergia)
+
 
 ## Tecnologias Utilizadas
 
@@ -18,26 +23,29 @@ Este é um projeto Next.js que apresenta uma página "em construção" para o si
 - Tailwind CSS
 - ESLint
 
-## Como Executar
+
+## Como Executar Localmente
 
 1. Instale as dependências:
-```bash
-npm install
-```
-
+	```bash
+	npm install
+	```
 2. Execute o servidor de desenvolvimento:
-```bash
-npm run dev
-```
+	```bash
+	npm run dev
+	```
+3. Acesse [http://localhost:3000](http://localhost:3000) no navegador.
 
-3. Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
+O site oficial está disponível em: [https://eletrov.com](https://eletrov.com)
+
 
 ## Scripts Disponíveis
 
-- `npm run dev` - Inicia o servidor de desenvolvimento
-- `npm run build` - Constrói o projeto para produção
-- `npm run start` - Inicia o servidor de produção
-- `npm run lint` - Executa o linter
+- `npm run dev` — Inicia o servidor de desenvolvimento
+- `npm run build` — Constrói o projeto para produção
+- `npm run start` — Inicia o servidor de produção
+- `npm run lint` — Executa o linter
+
 
 ## Estrutura do Projeto
 
@@ -47,16 +55,20 @@ src/
 │   ├── page.tsx          # Página principal
 │   ├── layout.tsx        # Layout da aplicação
 │   └── globals.css       # Estilos globais
+├── components/           # Componentes reutilizáveis e animados
+public/                   # Imagens e arquivos estáticos
 ```
+
 
 ## Redes Sociais
 
 ### Eletrov
 - Instagram: [@eletrovenergia](https://instagram.com/eletrovenergia)
 
-### BMD (Bernardo Maia Detomi)
-- Desenvolvedor do projeto
+### Desenvolvedor
+- Bernardo Maia Detomi (BMD)
+
 
 ## Licença
 
-© 2025 All rights reserved - Designed by Bernardo Maia Detomi (BMD).
+© 2025 Todos os direitos reservados — Desenvolvido por Bernardo Maia Detomi (BMD).
