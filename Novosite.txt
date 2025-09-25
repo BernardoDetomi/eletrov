@@ -1,0 +1,179 @@
+Site eletrov
+
+Está separado em 10 partes da tela e aproximadamente 11 componentes
+
+Componentes - 
+
+Header
+Home
+Sobre nós
+Resultado economia
+Financiamento
+Nosso engenheiro
+Diretrizes organizacionais (MVV)
+Cases de sucesso
+Locais de atendimento
+Fazer orçamento (Whatsapp ou email ainda n decidimos)7
+Footer (Dividido em 2 partes)
+
+*Header* 
+
+dimensão (w1301 x h82) Corner radius de 45
+Localização (x309 y144)
+
+Imagem logo1 - (dimensão w45 x h42) localização (x357 y42)
+Imagem logo2 - (dimensão w124 x h33) localização (x414 y169)
+
+Home - dimensão (w55 x h23) localização (x590 y174) fonte (Ubuntu Regular tamanho 20) cor (#008CA3)
+Sobre nós - dimensão (w90 x h23) localização (x688 y174) fonte (Ubuntu Regular tamanho 20) cor (#008CA3)
+Diretrizes organizacionais - dimensão (w233 x h23) localização (x821 y174) fonte (Ubuntu Regular tamanho 20) cor (#008CA3)
+Cases de sucesso - dimensão (w155 x h23) localização (x1097 y174) fonte (Ubuntu Regular tamanho 20) cor (#008CA3)
+Contato - dimensão (w74 x h23) localização (x1295 y174) fonte (Ubuntu Regular tamanho 20) cor (#008CA3)
+
+Botão dentro do header
+Economizar - Fundo botão dimensão (w183 x h69) localização (x1421 y151) cor (#008CA3)
+Escrito Economizar - dimensão (w106 x h23) localização (x1459 y174) fonte (Ubuntu Regular tamanho 20) cor (#FFFFFF)
+
+*Home* Dimensão da home (w1920 x h1080) Position (x0 y0)
+
+Fundo - cor (#008CA3)
+
+Escrito (Boas-vindas à EletroV (Primeira linha) Precisão que transforma, (Segunda linha) energia que conecta! (terceira linha)) dimensão (w742 x h222) localização (x294 y429) fonte (Ubuntu Mixed tamanho 64)
+Escritos ((Boas-vindas à)(que transforma,)(que conecta!)) utilizam a fonte (Ubuntu Regular) e os escritos ((EletroV)(Precisão)(energia)) utilizam a fonte (Ubuntu Bold)
+
+Imagem fundo - Dimensão (w1920 x h1080) Localização (x0 y0) 13% de opacidade
+
+Imagem cofrinho - Dimensão (w1067 x h854) Localização (x850 y226) 100% de opacidade
+
+  
+*Sobre nós* Dimensão (w1920 x h1080) fundo (#FFFFFF) Position (x0 y1080)
+
+Texto dividido em 3 parágrafos (A EletroV nasceu com o propósito de oferecer muito mais do que projetos de energia: nosso diferencial é o cuidado em cada detalhe, do primeiro contato ao acompanhamento após a instalação.
+
+Com experiência consolidada no setor elétrico e fotovoltaico, já participamos da implantação de milhares de usinas na região, sempre com foco na qualidade e no atendimento próximo. Sabemos que investir em energia é uma decisão importante, por isso trabalhamos para que cada cliente se sinta seguro, bem atendido e confiante de que fez a melhor escolha.
+
+Na EletroV, acreditamos que o pós-venda é parte essencial da experiência. Por isso, estamos sempre disponíveis para acompanhar, orientar e garantir que cada projeto entregue continue gerando resultados por muitos anos.) Dimensão (w876 x h662) Localização (x160 y1401) Fonte (Ubuntu Light tamanho 32) Cor (#008CA3)
+
+Imagem logo1 Dimensão (w312 x h300) Localização (x1323 y1491)
+Imagem logo2 Dimensão (w550 x h146) Localização (x1209 y1826)
+
+*Resultado economia* Dimensão (w1920 x h729) Position (x0 y2161) Cor (#FFFFFF)
+
+Imagem dólar Dimensão (w79 x h79) Posição (x920 y2262)
+
+Texto1 (Esse é o resultado da economia que você vai alcançar.) Dimensão (w1012 x h46) Posição (x454 y2357) Fonte (Ubuntu Bold tamanho 40 cor (#000000))
+Texto2 em 2 paragrados (Use o simulador abaixo e descubra quanto você poderá
+economizar ao longo dos anos.) Dimensão (w498 x h46) Posição (x711 y2419) Fonte (Ubuntu Regular tamanho 20 cor (#000000))
+
+Daqui para baixo será uma calculadora de valor gasto em conta de luz, parte da esquerda será um slider onde a pessoa irá inserir qual a média de valores da conta de luz dela, parte da direita será onde ficara os cálculos com base no valor da conta de luz da pessoa falando quanto ela economizará com a Energia Solar em 1,2,3,4 e 5 anos.
+
+Retângulo1 Dimensão (w638 x h291) Posição (x322 y2498) Cor(#D9D9D9)
+conteúdo por cima do retangulo1 
+Texto1 (Valor aproximado da sua conta de luz) Dimensão (w270 x h18) Posição (x393 y2555) Fonte (Ubuntu Regular tamanho 16 cor (#000000)) 
+Texto1 (R$0,00 (Essa parte aumentará de acordo com o valor que a pessoa inserir no slider abaixo)) Dimensão base (w153 x h55) Posição (x393 y2581) Fonte (Ubuntu Bold tamanho 48 cor (#000000))
+Slider-line Dimensão (w428 x h0) Posição (x402 y2712) Cor(#000000) Position (Center) Weight (4)
+Slider-circle Dimensão (w22 x h22) Posição (x391 y2701) Cor(#008CA3)
+Slider-text (R$0,00 (também aumentará com o valor inserido no slider) Dimensão base (w51 x h18) Posição (x840 y2701) Fonte (Ubuntu Regular tamanho 16 cor (#000000)))
+
+Retângulo2 Dimensão (w638 x h291) Posição (x960 y2498) Cor(#008CA3)
+Texto1 2 paragrafos (Com o nosso projeto de Energia Solar
+você economizará...) Dimensão (w498 x h64) Posição (x1018 y2541) Fonte (Ubuntu Bold tamanho 28) cor por escrito (("Com o nosso projeto de","você")(#FFFFFF))(("Energia Solar","economizará...")(#000000))
+Texto2 (Em 1 ano R$0,00(Esse valor aumentará de acordo com os calculos feitos)) Dimensão (w185 x h28) Posição (x1018 y2636) Fonte (Ubuntu Bold tamanho 24) cor por escrito (("Em 1 ano")(#FFFFFF))(("R$0,00")(#000000))
+Texto3 (Em 2 anos R$0,00(Esse valor aumentará de acordo com os calculos feitos)) Dimensão (w197 x h28) Posição (x1018 y2678) Fonte (Ubuntu Bold tamanho 24) cor por escrito (("Em 2 anos")(#FFFFFF))(("R$0,00")(#000000))
+Texto4 (Em 3 anos R$0,00(Esse valor aumentará de acordo com os calculos feitos)) Dimensão (w197 x h28) Posição (x1018 y2719) Fonte (Ubuntu Bold tamanho 24) cor por escrito (("Em 3 anos")(#FFFFFF))(("R$0,00")(#000000))
+Texto5 (Em 4 anos R$0,00(Esse valor aumentará de acordo com os calculos feitos)) Dimensão (w197 x h28) Posição (x1018 y2657) Fonte (Ubuntu Bold tamanho 24) cor por escrito (("Em 4 anos")(#FFFFFF))(("R$0,00")(#000000))
+Texto6 (Em 5 anos R$0,00(Esse valor aumentará de acordo com os calculos feitos)) Dimensão (w197 x h28) Posição (x1018 y2699) Fonte (Ubuntu Bold tamanho 24) cor por escrito (("Em 5 anos")(#FFFFFF))(("R$0,00")(#000000))
+
+*Financiamento* Dimensão (w1920 x h867) Position (x0 y2891) Cor (#008CCA3)
+
+Texto1 (Financie em até 72x) Dimensão (w902 x h110) Posição (x509 y2984) Fonte (Ubuntu Bold tamanho 96) cor (#000000)
+Texto2 (e inicie o pagamento apenas após o funcionamento do seu sistema!) Dimensão (w1216 x h46) Posição (x352 y3094) Fonte (Ubuntu Regular tamanho 40) cor (#FFFFFF)
+Retangulo com logo dos bancos Dimensão (w1248 x h201) Posição (x336 y3228) cor (#FFFFFF)
+Imagem png Logo1Banco Dimensão (w248 x h194) Posição (x570 y3232)
+Imagem png Logo2Banco Dimensão (w248 x h194) Posição (x1103 y3232)
+Texto3 (*Entre em contato pelo nosso WhatsApp e consulte todos os bancos e financiamentos disponíveis.) Dimensão (w1065 x h28) Posição (x427 y3518) Fonte (Ubuntu Regular tamanho 24) cor (#FFFFFF)
+Botão financiamento Dimensão (w292 x h52) Corner radius (45) Posição (x814 y3614) Cor (#FFFFFF)
+Text_Botão (Entre em contato) Dimensão (w198 x h28) Posição (x861 y3626) Fonte (Ubuntu Bold tamanho 24) cor (#008CA3)
+
+*Sobre nosso engenheiro* Dimensão (w1920 x h714) Position (x0 y3758) Cor (#FFFFFF)
+
+Titulo (Sobre nosso engenheiro) Dimensão (w1101 x h110) Posição (x409 y3877) Fonte (Ubuntu Bold tamanho 96) cor (#008CA3)
+Imagem1.png Dimensão (w103 x h103) Posição (x407 y4088)
+Texto1 (+2 mil) Dimensão (w103 x h41) Posição (x413 y4211) Fonte (Ubuntu Bold tamanho 36) cor (#060606)
+Texto2 (sistemas fotovoltaicos instalados em Minas Gerais(2 paragrafos)) Dimensão (w300 x 46) Posição (x315 y4268) Fonte (Ubuntu Regular tamanho 20) cor (#060606)
+Imagem2.png Dimensão (w103 x h103) Posição (x741 y4088)
+Texto3 (+16 MWp) Dimensão (w158 x h41) Posição (x713 y4211) Fonte (Ubuntu Bold tamanho 36) cor (#060606)
+Texto4 (de capacidade instalada) Dimensão (w216 x 23) Posição (x685 y4268) Fonte (Ubuntu Regular tamanho 20) cor (#060606)
+Imagem3.png Dimensão (w103 x h103) Posição (x1082 y4088)
+Texto5 (+1,8) Dimensão (w71 x h41) Posição (x1098 y4211) Fonte (Ubuntu Bold tamanho 36) cor (#060606)
+Texto6 (milhão) Dimensão (w65 x h23) Posição (x1102 y4264) Fonte (Ubuntu Bold tamanho 20) cor (#060606)
+Texto7 (ao mês de economia para nossos clientes(2 paragrafos)) Dimensão (w185 x h46) Posição (x1042 y4307) Fonte (Ubuntu Regular tamanho 20) cor (#060606)
+Imagem4.png Dimensão (w103 x h103) Posição (x1416 y4088)
+Texto8 (-1 mil) Dimensão (w95 x h41) Posição (x1419 y4211) Fonte (Ubuntu Bold tamanho 36) cor (#060606)
+Texto9 (ton. de CO2) Dimensão (w111 x h23) Posição (x1412 y4264) Fonte (Ubuntu Bold tamanho 20) cor (#060606)
+Texto10 (emitidos ao mês na atmosfera) Dimensão (w273 x h23) Posição (x1331 y4307) Fonte (Ubuntu Regular tamanho 20) cor (#060606)
+
+*Diretrizes organizacionais* Dimensão (w1920 x h1227) Position (x0 y4473) Cor (#008CA3)
+
+Titulo (MVV) Dimensão (w228 x h94) Posição (x846 y4553) Fonte (Ubuntu Bold tamanho 96 cor #FFFFFF)
+line.mvv Dimensão (w463 x h0) Posição (x728 y4666) Cor (#FFFFFF) Weight (3)
+Subtitulo (Confira nosso MVV) Dimensão (w228 x h27) Posição (x846 y4685) Fonte (Ubuntu Regular tamanho 24 cor #FFFFFF)
+
+Restante das diretrizes são 3 retangulos com corner radius de 30 apenas com um contorno branco de weight 3 e o meio transparente, cada um tem um titulo com um destaque diferente do texto, o retangulo da esquerda é o de "Missão" com o texto "Levar soluções em energia elétrica e solar fotovoltaica com qualidade, eficiência e atendimento humanizado, gerando economia e sustentabilidade para cada cliente."
+o retangulo da direita é o "Visão" com o texto "Ser reconhecida como a empresa que transforma energia em confiança e resultados, sendo referência regional em projetos e instalações elétricas e solares."
+o 3 retangulo fica abaixo dos 2 esticado na mesma largura dos outros 2 retangulos juntos, esse retangulo é o "Valores" com o texto "Compromisso: estar sempre ao lado do cliente, do início ao pós-venda.
+Qualidade: entregar serviços seguros e duradouros.
+Inovação: buscar constantemente novas tecnologias.
+Sustentabilidade: cuidar do futuro com energia limpa.
+Ética e respeito: relações transparentes e confiáveis."
+
+Cases de sucesso são 6 obras, com a foto e abaixo um titulo de cidade e abaixo uma frase "Projetos Comerciais e Industriais" Cases de sucesso tem o titulo na cor #008CA3 e o fundo em branco, no local onde está escrito o nome da cidade e a frase tem um retangulo de fundo na cor #008CA3
+
+*Localidades* 
+
+Nessa parte é dividido em 2, um quadrante a esquerda e um quadrante a direita, na esquerda tem um titulo um subtitulo e 2 listas de cidades cada lista com 15 cidades, o titulo é esse "Energia Solar ao seu alcance!" Sendo "Energia Solar" na cor preta e "ao seu alcance!" na cor #008CA3, o subtitulo é o seguinte "Atendemos a 30 cidades do campo das vertentes.
+Se você também está por perto, conte conosco para reduzir
+a sua conta de energia." e as cidades são essas "São João del Rei
+Tiradentes
+Resende Costa
+Lagoa Dourada
+Coronel Xavier Chaves
+Carrancas
+Conceição da Barra de Minas
+Madre de Deus de Minas
+São Vicente de Minas
+Nazareno
+Ritápolis
+Prados
+Dores de Campo
+Barroso
+Ibertioga" "Lavras
+São Tiago
+Entre Rios de Minas
+São Brás do Suaçuí
+Jeceaba
+Alfredo Vasconcelos 
+Antônio Carlos 
+Itutinga 
+Itumirim 
+Ijaci 
+Capela Nova
+Casa Grande 
+Carandaí 
+Caranaíba 
+Desterro do Melo"
+
+Abaixo das cidades tem um botão escrito Fazer orçamento, o botão é na cor #008CA3 e o escrito na cor branca
+
+Na direita é para implementar o mapa do google maps onde mostra a localização, o html da localização está no arquivo localidade.html
+
+*Fazer orçamento*
+
+Essa parte ainda não decidimos ao certo então pode inovar, por enquanto temos apenas o titulo "Comece a economizar com Energia Solar hoje"
+Subtitulo "Preencha o formulario abaixo e faça um orçamento gratuito"
+ai temos as labels Nome, WhatsApp, CEP, Consumo mensal(KW/h)
+e um botão abaixo Pedir orçamento
+
+Ainda não decidimos se vai ser vinculado ao whatsapp ou ao email
+
+o footer gostei do que já está feito, não precisa alterar nada por enquanto
