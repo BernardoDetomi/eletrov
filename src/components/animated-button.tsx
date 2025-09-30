@@ -36,7 +36,7 @@ export default function AnimatedButton({
       }}
       whileHover={{ 
         scale: 1.05,
-        boxShadow: '0 10px 25px rgba(139, 92, 246, 0.3)',
+        boxShadow: '0 10px 25px rgb(11, 150, 150)',
       }}
       whileTap={{ scale: 0.95 }}
     >
