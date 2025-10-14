@@ -41,7 +41,7 @@ export default function HomeHero() {
 
           {/* Piggy Bank Image */}
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end h-full">
-            <div className="relative w-full h-full max-h-[calc(100vh-200px)] scale-130 lg:scale-155">
+            <div className="relative w-full h-full max-h-[calc(100vh-200px)] scale-125 lg:scale-150">
               <Image 
                 src="/piggy.png" 
                 alt="Cofrinho" 
