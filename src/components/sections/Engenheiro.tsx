@@ -7,63 +7,84 @@ import LazySection from "./LazySection";
 
 export default function Engenheiro() {
   return (
-    <LazySection id="engenheiro" className="relative overflow-hidden" style={{ backgroundColor: "#FFFFFF" }}>
-      <div className="relative mx-auto" style={{ width: 1920, height: 714 }}>
-        {/* Título (w1101 x h110) em x409 y3877 => top=119 */}
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 409, top: 119, width: 1101, height: 110, color: "#008CA3", fontFamily: "var(--font-ubuntu)", fontWeight: 700, fontSize: 96, lineHeight: 1 }}>
-          Sobre nosso engenheiro
+    <LazySection id="engenheiro" className="relative overflow-hidden py-16 lg:py-24" style={{ backgroundColor: "#FFFFFF" }}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Title */}
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className={`${ubuntu.variable} text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#008CA3] font-ubuntu`}>
+            Sobre nosso engenheiro
+          </h2>
         </div>
 
-        {/* Bloco 1 */}
-        <div className="absolute" style={{ left: 407, top: 330, width: 103, height: 103 }}>
-          <Image src="/Imagem1.png" alt="Ícone 1" fill sizes="103px" style={{ objectFit: "contain" }} />
-        </div>
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 407, top: 453, width: 103, height: 41, textAlign: "center", color: "#060606", fontFamily: "var(--font-ubuntu)", fontWeight: 700, fontSize: 36, lineHeight: 1 }}>
-          +<CountUp to={2000} duration={2} format={(v)=>v.toLocaleString("pt-BR")} />
-        </div>
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 309, top: 510, width: 300, height: 46, textAlign: "center", color: "#060606", fontFamily: "var(--font-ubuntu)", fontWeight: 400, fontSize: 20, lineHeight: 1.2 }}>
-          <p>sistemas fotovoltaicos instalados</p>
-          <p>em Minas Gerais</p>
-        </div>
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          {/* Stat 1 */}
+          <div className="text-center">
+            <div className="flex justify-center mb-4">
+              <div className="relative w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28">
+                <Image src="/Imagem1.png" alt="Ícone 1" fill sizes="112px" style={{ objectFit: "contain" }} />
+              </div>
+            </div>
+            <div className={`${ubuntu.variable} text-2xl sm:text-3xl lg:text-4xl font-bold text-[#060606] font-ubuntu mb-2`}>
+              +<CountUp to={2000} duration={2} format={(v) => v.toLocaleString("pt-BR")} />
+            </div>
+            <div className={`${ubuntu.variable} text-sm sm:text-base lg:text-lg text-[#060606] font-ubuntu leading-relaxed`}>
+              <p>sistemas fotovoltaicos instalados</p>
+              <p>em Minas Gerais</p>
+            </div>
+          </div>
 
-        {/* Bloco 2 */}
-        <div className="absolute" style={{ left: 741, top: 330, width: 103, height: 103 }}>
-          <Image src="/Imagem2.png" alt="Ícone 2" fill sizes="103px" style={{ objectFit: "contain" }} />
-        </div>
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 713, top: 453, width: 158, height: 41, textAlign: "center", color: "#060606", fontFamily: "var(--font-ubuntu)", fontWeight: 700, fontSize: 36, lineHeight: 1 }}>
-          +<CountUp to={16} duration={2} /> MWp
-        </div>
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 685, top: 510, width: 216, height: 23, textAlign: "center", color: "#060606", fontFamily: "var(--font-ubuntu)", fontWeight: 400, fontSize: 20, lineHeight: 1 }}>
-          de capacidade instalada
-        </div>
+          {/* Stat 2 */}
+          <div className="text-center">
+            <div className="flex justify-center mb-4">
+              <div className="relative w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28">
+                <Image src="/Imagem2.png" alt="Ícone 2" fill sizes="112px" style={{ objectFit: "contain" }} />
+              </div>
+            </div>
+            <div className={`${ubuntu.variable} text-2xl sm:text-3xl lg:text-4xl font-bold text-[#060606] font-ubuntu mb-2`}>
+              +<CountUp to={16} duration={2} /> MWp
+            </div>
+            <div className={`${ubuntu.variable} text-sm sm:text-base lg:text-lg text-[#060606] font-ubuntu`}>
+              de capacidade instalada
+            </div>
+          </div>
 
-        {/* Bloco 3 */}
-        <div className="absolute" style={{ left: 1082, top: 330, width: 103, height: 103 }}>
-          <Image src="/Imagem3.png" alt="Ícone 3" fill sizes="103px" style={{ objectFit: "contain" }} />
-        </div>
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 1098, top: 453, width: 71, height: 41, textAlign: "center", color: "#060606", fontFamily: "var(--font-ubuntu)", fontWeight: 700, fontSize: 36, lineHeight: 1 }}>
-          +<CountUp to={1} duration={2} format={(v)=>v.toString()} />,<CountUp to={8} duration={2} format={(v)=>v.toString()} />
-        </div>
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 1102, top: 506, width: 65, height: 23, textAlign: "center", color: "#060606", fontFamily: "var(--font-ubuntu)", fontWeight: 700, fontSize: 20, lineHeight: 1 }}>
-          milhão
-        </div>
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 1042, top: 549, width: 185, height: 46, textAlign: "center", color: "#060606", fontFamily: "var(--font-ubuntu)", fontWeight: 400, fontSize: 20, lineHeight: 1.2 }}>
-          <p>ao mês de economia</p>
-          <p>para nossos clientes</p>
-        </div>
+          {/* Stat 3 */}
+          <div className="text-center">
+            <div className="flex justify-center mb-4">
+              <div className="relative w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28">
+                <Image src="/Imagem3.png" alt="Ícone 3" fill sizes="112px" style={{ objectFit: "contain" }} />
+              </div>
+            </div>
+            <div className={`${ubuntu.variable} text-2xl sm:text-3xl lg:text-4xl font-bold text-[#060606] font-ubuntu mb-1`}>
+              +<CountUp to={1} duration={2} format={(v) => v.toString()} />,<CountUp to={8} duration={2} format={(v) => v.toString()} />
+            </div>
+            <div className={`${ubuntu.variable} text-sm sm:text-base lg:text-lg font-bold text-[#060606] font-ubuntu mb-2`}>
+              milhão
+            </div>
+            <div className={`${ubuntu.variable} text-sm sm:text-base lg:text-lg text-[#060606] font-ubuntu leading-relaxed`}>
+              <p>ao mês de economia</p>
+              <p>para nossos clientes</p>
+            </div>
+          </div>
 
-        {/* Bloco 4 */}
-        <div className="absolute" style={{ left: 1416, top: 330, width: 103, height: 103 }}>
-          <Image src="/Imagem4.png" alt="Ícone 4" fill sizes="103px" style={{ objectFit: "contain" }} />
-        </div>
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 1419, top: 453, width: 95, height: 41, textAlign: "center", color: "#060606", fontFamily: "var(--font-ubuntu)", fontWeight: 700, fontSize: 36, lineHeight: 1 }}>
-          -<CountUp to={1000} duration={2} format={(v)=>v.toLocaleString("pt-BR")} />
-        </div>
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 1412, top: 506, width: 111, height: 23, textAlign: "center", color: "#060606", fontFamily: "var(--font-ubuntu)", fontWeight: 700, fontSize: 20, lineHeight: 1 }}>
-          ton. de CO2
-        </div>
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 1331, top: 549, width: 273, height: 23, textAlign: "center", color: "#060606", fontFamily: "var(--font-ubuntu)", fontWeight: 400, fontSize: 20, lineHeight: 1 }}>
-          emitidos ao mês na atmosfera
+          {/* Stat 4 */}
+          <div className="text-center">
+            <div className="flex justify-center mb-4">
+              <div className="relative w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28">
+                <Image src="/Imagem4.png" alt="Ícone 4" fill sizes="112px" style={{ objectFit: "contain" }} />
+              </div>
+            </div>
+            <div className={`${ubuntu.variable} text-2xl sm:text-3xl lg:text-4xl font-bold text-[#060606] font-ubuntu mb-1`}>
+              -<CountUp to={1000} duration={2} format={(v) => v.toLocaleString("pt-BR")} />
+            </div>
+            <div className={`${ubuntu.variable} text-sm sm:text-base lg:text-lg font-bold text-[#060606] font-ubuntu mb-2`}>
+              ton. de CO2
+            </div>
+            <div className={`${ubuntu.variable} text-sm sm:text-base lg:text-lg text-[#060606] font-ubuntu`}>
+              emitidos ao mês na atmosfera
+            </div>
+          </div>
         </div>
       </div>
     </LazySection>

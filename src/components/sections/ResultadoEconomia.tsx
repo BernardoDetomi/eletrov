@@ -20,121 +20,162 @@ export default function ResultadoEconomia() {
   }, [valor, yMin]);
 
   return (
-    <section id="resultado-economia" className="relative overflow-hidden" style={{ backgroundColor: "#FFFFFF" }}>
-      <div className="relative mx-auto" style={{ width: 1920, height: 800 }}>
-        <div className="absolute" style={{ left: 920, top: 101, width: 79, height: 79 }}>
-          <Image src="/dollar1.png" alt="Ícone dólar" fill sizes="79px" style={{ objectFit: "contain" }} />
-        </div>
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 454, top: 196, width: 1012, height: 46, color: "#000000", fontFamily: "var(--font-ubuntu)", fontWeight: 700, fontSize: 40, lineHeight: 1 }}>
-          Esse é o resultado da economia que você vai alcançar.
-        </div>
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 711, top: 258, width: 498, height: 46, color: "#000000", fontFamily: "var(--font-ubuntu)", fontWeight: 400, fontSize: 20, lineHeight: 1.3 }}>
-          <p>Use o simulador abaixo e descubra quanto você poderá</p>
-          <p>economizar ao longo dos anos.</p>
+    <section id="resultado-economia" className="relative overflow-hidden py-16 lg:py-24" style={{ backgroundColor: "#FFFFFF" }}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="flex justify-center mb-6">
+            <div className="relative w-16 h-16 sm:w-20 sm:h-20">
+              <Image src="/dollar1.png" alt="Ícone dólar" fill sizes="80px" style={{ objectFit: "contain" }} />
+            </div>
+          </div>
+          <h2 className={`${ubuntu.variable} text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black font-ubuntu mb-4`}>
+            Esse é o resultado da economia que você vai alcançar.
+          </h2>
+          <p className={`${ubuntu.variable} text-base sm:text-lg md:text-xl text-black font-ubuntu`}>
+            Use o simulador abaixo e descubra quanto você poderá<br className="hidden sm:block" />
+            economizar ao longo dos anos.
+          </p>
         </div>
 
-        {/* Retângulo esquerdo (controle) */}
-        <div className="absolute" style={{ left: 322, top: 337, width: 638, height: 291, background: "#D9D9D9", borderRadius: 8 }} />
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 393, top: 394, width: 520, height: 18, color: "#000000", fontFamily: "var(--font-ubuntu)", fontWeight: 400, fontSize: 16, lineHeight: 1 }}>
-          Valor aproximado da sua conta de luz
-        </div>
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 393, top: 420, width: 300, height: 55, color: "#000000", fontFamily: "var(--font-ubuntu)", fontWeight: 700, fontSize: 48, lineHeight: 1 }}>
-          {brl(valor)}
-        </div>
-        {/* Fase (bifásico/trifásico) */}
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 393, top: 480, width: 520, height: 28, color: "#000000", fontFamily: "var(--font-ubuntu)", fontWeight: 700, fontSize: 16, lineHeight: 1 }}>
-          <label style={{ marginRight: 16 }}>
-            <input type="radio" name="fase" checked={fase === "bifasico"} onChange={()=>setFase("bifasico")} /> Bifásico (mínimo {brl(80)})
-          </label>
-          <label>
-            <input type="radio" name="fase" checked={fase === "trifasico"} onChange={()=>setFase("trifasico")} /> Trifásico (mínimo {brl(130)})
-          </label>
-        </div>
-        {/* Slider funcional */}
-        <div className="absolute" style={{ left: 393, top: 530, width: 520 }}>
-          <input type="range" min={0} max={5000} step={10} value={valor} onChange={(e)=>setValor(parseInt(e.target.value || "0", 10))} style={{ width: "100%" }} />
-          <div className={`${ubuntu.variable}`} style={{ marginTop: 6, display: "flex", justifyContent: "space-between", color: "#000000", fontFamily: "var(--font-ubuntu)", fontWeight: 400, fontSize: 16 }}>
-            <span>R$ 0</span>
-            <span>{brl(valor)}</span>
+        {/* Calculator Container */}
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 mb-12">
+            {/* Left Panel - Controls */}
+            <div className="bg-gray-200 rounded-lg p-6 sm:p-8">
+              <h3 className={`${ubuntu.variable} text-lg sm:text-xl font-normal text-black font-ubuntu mb-4`}>
+                Valor aproximado da sua conta de luz
+              </h3>
+              <div className={`${ubuntu.variable} text-3xl sm:text-4xl lg:text-5xl font-bold text-black font-ubuntu mb-6`}>
+                {brl(valor)}
+              </div>
+              
+              {/* Phase Selection */}
+              <div className={`${ubuntu.variable} mb-6 font-bold text-base sm:text-lg text-black font-ubuntu`}>
+                <label className="block mb-2">
+                  <input 
+                    type="radio" 
+                    name="fase" 
+                    checked={fase === "bifasico"} 
+                    onChange={() => setFase("bifasico")}
+                    className="mr-2"
+                  /> 
+                  Bifásico (mínimo {brl(80)})
+                </label>
+                <label className="block">
+                  <input 
+                    type="radio" 
+                    name="fase" 
+                    checked={fase === "trifasico"} 
+                    onChange={() => setFase("trifasico")}
+                    className="mr-2"
+                  /> 
+                  Trifásico (mínimo {brl(130)})
+                </label>
+              </div>
+              
+              {/* Slider */}
+              <div>
+                <input 
+                  type="range" 
+                  min={0} 
+                  max={5000} 
+                  step={10} 
+                  value={valor} 
+                  onChange={(e) => setValor(parseInt(e.target.value || "0", 10))}
+                  className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer slider"
+                />
+                <div className={`${ubuntu.variable} mt-2 flex justify-between text-sm sm:text-base text-black font-ubuntu`}>
+                  <span>R$ 0</span>
+                  <span>{brl(valor)}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Panel - Results */}
+            <div className="bg-[#008CA3] rounded-lg p-6 sm:p-8">
+              <div className={`${ubuntu.variable} text-lg sm:text-xl lg:text-2xl font-bold font-ubuntu mb-8`}>
+                <span className="text-white">Com o nosso projeto de </span>
+                <span className="text-black">Energia Solar</span>
+                <br />
+                <span className="text-white">você </span>
+                <span className="text-black">economizará...</span>
+              </div>
+              
+              {/* Results Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className={`${ubuntu.variable} text-lg sm:text-xl font-bold font-ubuntu`}>
+                  <span className="text-white">Em 1 ano </span>
+                  <span className="text-black">≈ {brl(anos[0])}</span>
+                </div>
+                <div className={`${ubuntu.variable} text-lg sm:text-xl font-bold font-ubuntu`}>
+                  <span className="text-white">Em 2 anos </span>
+                  <span className="text-black">≈ {brl(anos[1])}</span>
+                </div>
+                <div className={`${ubuntu.variable} text-lg sm:text-xl font-bold font-ubuntu`}>
+                  <span className="text-white">Em 3 anos </span>
+                  <span className="text-black">≈ {brl(anos[2])}</span>
+                </div>
+                <div className={`${ubuntu.variable} text-lg sm:text-xl font-bold font-ubuntu`}>
+                  <span className="text-white">Em 4 anos </span>
+                  <span className="text-black">≈ {brl(anos[3])}</span>
+                </div>
+                <div className={`${ubuntu.variable} text-lg sm:text-xl font-bold font-ubuntu sm:col-span-2`}>
+                  <span className="text-white">Em 5 anos </span>
+                  <span className="text-black">≈ {brl(anos[4])}</span>
+                </div>
+              </div>
+              
+              {/* Legend */}
+              <div className={`${ubuntu.variable} text-center mt-6 text-white text-xs sm:text-sm font-ubuntu opacity-85`}>
+                (≈ = aproximadamente)
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="text-center">
+            <button
+              onClick={() => {
+                const envNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "32999650094";
+                const msg = `Olá! Gostaria de saber mais sobre como economizar com Energia Solar. Vi que posso economizar aproximadamente ${brl(anos[4])} em 5 anos!`;
+                const url = `https://wa.me/55${envNumber}?text=${encodeURIComponent(msg)}`;
+                window.open(url, "_blank");
+              }}
+              className={`${ubuntu.variable} bg-green-500 hover:bg-green-600 text-white border-none rounded-xl px-8 sm:px-12 lg:px-16 py-4 sm:py-5 font-bold text-lg sm:text-xl lg:text-2xl cursor-pointer shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-1 font-ubuntu`}
+              style={{
+                animation: "pulseColors 2s ease-in-out infinite"
+              }}
+            >
+              ECONOMIZAR
+            </button>
           </div>
         </div>
-
-        {/* Retângulo direito (resultado) */}
-        <div className="absolute" style={{ left: 960, top: 337, width: 638, height: 291, background: "#008CA3", borderRadius: 8 }} />
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 1018, top: 380, width: 498, height: 64, fontFamily: "var(--font-ubuntu)", fontWeight: 700, fontSize: 28, lineHeight: 1.2 }}>
-          <span style={{ color: "#FFFFFF" }}>Com o nosso projeto de </span>
-          <span style={{ color: "#000000" }}>Energia Solar</span>
-          <br />
-          <span style={{ color: "#FFFFFF" }}>você </span>
-          <span style={{ color: "#000000" }}>economizará...</span>
-        </div>
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 1018, top: 475, width: 320, height: 28, fontFamily: "var(--font-ubuntu)", fontWeight: 700, fontSize: 24, lineHeight: 1 }}>
-          <span style={{ color: "#FFFFFF" }}>Em 1 ano </span>
-          <span style={{ color: "#000000" }}>≈ {brl(anos[0])}</span>
-        </div>
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 1018, top: 517, width: 340, height: 28, fontFamily: "var(--font-ubuntu)", fontWeight: 700, fontSize: 24, lineHeight: 1 }}>
-          <span style={{ color: "#FFFFFF" }}>Em 2 anos </span>
-          <span style={{ color: "#000000" }}>≈ {brl(anos[1])}</span>
-        </div>
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 1018, top: 558, width: 340, height: 28, fontFamily: "var(--font-ubuntu)", fontWeight: 700, fontSize: 24, lineHeight: 1 }}>
-          <span style={{ color: "#FFFFFF" }}>Em 3 anos </span>
-          <span style={{ color: "#000000" }}>≈ {brl(anos[2])}</span>
-        </div>
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 1340, top: 460, width: 250, height: 28, fontFamily: "var(--font-ubuntu)", fontWeight: 700, fontSize: 24, lineHeight: 1, overflowWrap: "anywhere" }}>
-          <span style={{ color: "#FFFFFF" }}>Em 4 anos </span>
-          <span style={{ color: "#000000" }}>≈ {brl(anos[3])}</span>
-        </div>
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 1340, top: 540, width: 250, height: 28, fontFamily: "var(--font-ubuntu)", fontWeight: 700, fontSize: 24, lineHeight: 1, overflowWrap: "anywhere" }}>
-          <span style={{ color: "#FFFFFF" }}>Em 5 anos </span>
-          <span style={{ color: "#000000" }}>≈ {brl(anos[4])}</span>
-        </div>
-        {/* Legenda */}
-        <div className={`${ubuntu.variable} absolute`} style={{ left: 960, top: 650, width: 638, height: 20, textAlign: "center", color: "#FFFFFF", fontFamily: "var(--font-ubuntu)", fontWeight: 400, fontSize: 12, opacity: 0.85 }}>
-          (≈ = aproximadamente)
-        </div>
-
-        {/* Botão ECONOMIZAR */}
-        <div className="absolute" style={{ left: 0, top: 700, width: 1920, display: "flex", justifyContent: "center", marginBottom: 40 }}>
-          <button
-            onClick={() => {
-              const envNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "32999650094";
-              const msg = `Olá! Gostaria de saber mais sobre como economizar com Energia Solar. Vi que posso economizar aproximadamente ${brl(anos[4])} em 5 anos!`;
-              const url = `https://wa.me/55${envNumber}?text=${encodeURIComponent(msg)}`;
-              window.open(url, "_blank");
-            }}
-            className={`${ubuntu.variable}`}
-            style={{
-              background: "#22C55E",
-              color: "#FFFFFF",
-              border: "none",
-              borderRadius: 12,
-              padding: "16px 100px",
-              fontFamily: "var(--font-ubuntu)",
-              fontWeight: 700,
-              fontSize: 24,
-              cursor: "pointer",
-              boxShadow: "0 4px 12px rgba(34, 197, 94, 0.3)",
-              transition: "all 0.2s ease",
-              animation: "pulseColors 2s ease-in-out infinite"
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-2px)";
-              e.currentTarget.style.boxShadow = "0 6px 16px rgba(34, 197, 94, 0.4)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "0 4px 12px rgba(34, 197, 94, 0.3)";
-            }}
-          >
-            ECONOMIZAR
-          </button>
-        </div>
       </div>
+      
       <style jsx>{`
         @keyframes pulseColors {
           0% { background-color: #22C55E; }
           50% { background-color: #008CA3; }
           100% { background-color: #22C55E; }
+        }
+        
+        .slider::-webkit-slider-thumb {
+          appearance: none;
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+          background: #008CA3;
+          cursor: pointer;
+        }
+        
+        .slider::-moz-range-thumb {
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+          background: #008CA3;
+          cursor: pointer;
+          border: none;
         }
       `}</style>
     </section>

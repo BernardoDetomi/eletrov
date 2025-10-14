@@ -23,7 +23,7 @@ function formatCep(input: string) {
 
 function buildWhatsAppLink(name: string, phone: string, cep: string, consumo: string) {
   const msg = `Olá, meu nome é ${name}. Gostaria de um orçamento.\nWhatsApp: ${phone}\nCEP: ${cep}\nConsumo mensal: ${consumo} kWh`;
-  const envNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "32999650094"; // defina em .env.local
+  const envNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "32999650094";
   const digits = onlyDigits(envNumber);
   const url = `https://wa.me/55${digits}?text=${encodeURIComponent(msg)}`;
   return url;
@@ -49,61 +49,132 @@ export default function Orcamento() {
   }, [canal, name, phone, cep, consumo]);
 
   return (
-    <section id="contato" style={{ background: "#F7F7F7" }}>
-      <div className="mx-auto" style={{ width: 1920, padding: "80px 160px" }}>
-        <h2 className={`${ubuntu.variable}`} style={{ textAlign: "center", fontFamily: "var(--font-ubuntu)", fontWeight: 700, fontSize: 48, marginBottom: 8, color: "#008CA3" }}>
-          Comece a economizar com Energia Solar hoje
-        </h2>
-        <p className={`${ubuntu.variable}`} style={{ textAlign: "center", color: "#444", fontFamily: "var(--font-ubuntu)", fontWeight: 400, fontSize: 20, marginBottom: 32 }}>
-          Preencha o formulário abaixo e faça um orçamento gratuito
-        </p>
+    <section id="contato" className="py-16 lg:py-24" style={{ background: "#F7F7F7" }}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className={`${ubuntu.variable} text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#008CA3] font-ubuntu mb-4`}>
+            Comece a economizar com Energia Solar hoje
+          </h2>
+          <p className={`${ubuntu.variable} text-base sm:text-lg md:text-xl text-gray-600 font-ubuntu`}>
+            Preencha o formulário abaixo e faça um orçamento gratuito
+          </p>
+        </div>
 
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            window.open(link, "_blank");
-          }}
-          style={{ maxWidth: 860, margin: "0 auto", background: "#FFFFFF", padding: 32, borderRadius: 12, boxShadow: "0 8px 24px rgba(0,0,0,0.08)" }}
-        >
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
-            <div>
-              <label className={`${ubuntu.variable}`} style={{ display: "block", fontFamily: "var(--font-ubuntu)", fontWeight: 700, marginBottom: 6, color: "#008CA3" }}>Nome</label>
-              <input value={name} onChange={(e)=>setName(e.target.value)} required placeholder="Seu nome" style={{ width: "100%", height: 44, borderRadius: 8, border: "1px solid #DDD", padding: "0 12px", color: "#111" }} />
+        {/* Form */}
+        <div className="max-w-4xl mx-auto">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              window.open(link, "_blank");
+            }}
+            className="bg-white p-6 sm:p-8 lg:p-10 rounded-xl shadow-lg"
+          >
+            {/* Form Fields */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6">
+              <div>
+                <label className={`${ubuntu.variable} block font-bold text-[#008CA3] font-ubuntu mb-2 text-sm sm:text-base`}>
+                  Nome
+                </label>
+                <input 
+                  value={name} 
+                  onChange={(e) => setName(e.target.value)} 
+                  required 
+                  placeholder="Seu nome" 
+                  className="w-full h-10 sm:h-12 rounded-lg border border-gray-300 px-3 sm:px-4 text-gray-900 focus:border-[#008CA3] focus:outline-none focus:ring-2 focus:ring-[#008CA3]/20 transition-colors"
+                  style={{ '::placeholder': { color: '#222', opacity: 1 } }}
+                />
+              </div>
+              <div>
+                <label className={`${ubuntu.variable} block font-bold text-[#008CA3] font-ubuntu mb-2 text-sm sm:text-base`}>
+                  WhatsApp
+                </label>
+                <input 
+                  value={phone} 
+                  onChange={(e) => setPhone(formatPhone(e.target.value))} 
+                  required 
+                  placeholder="(32) 99999-9999" 
+                  inputMode="numeric"
+                  className="w-full h-10 sm:h-12 rounded-lg border border-gray-300 px-3 sm:px-4 text-gray-900 focus:border-[#008CA3] focus:outline-none focus:ring-2 focus:ring-[#008CA3]/20 transition-colors"
+                  style={{ '::placeholder': { color: '#222', opacity: 1 } }}
+                />
+              </div>
+              <div>
+                <label className={`${ubuntu.variable} block font-bold text-[#008CA3] font-ubuntu mb-2 text-sm sm:text-base`}>
+                  CEP
+                </label>
+                <input 
+                  value={cep} 
+                  onChange={(e) => setCep(formatCep(e.target.value))} 
+                  required 
+                  placeholder="36300-000" 
+                  inputMode="numeric"
+                  className="w-full h-10 sm:h-12 rounded-lg border border-gray-300 px-3 sm:px-4 text-gray-900 focus:border-[#008CA3] focus:outline-none focus:ring-2 focus:ring-[#008CA3]/20 transition-colors"
+                  style={{ '::placeholder': { color: '#222', opacity: 1 } }}
+                />
+              </div>
+              <div>
+                <label className={`${ubuntu.variable} block font-bold text-[#008CA3] font-ubuntu mb-2 text-sm sm:text-base`}>
+                  Consumo mensal (kWh)
+                </label>
+                <input 
+                  value={consumo} 
+                  onChange={(e) => setConsumo(onlyDigits(e.target.value))} 
+                  required 
+                  placeholder="Ex.: 350" 
+                  inputMode="numeric"
+                  className="w-full h-10 sm:h-12 rounded-lg border border-gray-300 px-3 sm:px-4 text-gray-900 focus:border-[#008CA3] focus:outline-none focus:ring-2 focus:ring-[#008CA3]/20 transition-colors"
+                  style={{ '::placeholder': { color: '#222', opacity: 1 } }}
+                />
+              </div>
             </div>
-            <div>
-              <label className={`${ubuntu.variable}`} style={{ display: "block", fontFamily: "var(--font-ubuntu)", fontWeight: 700, marginBottom: 6, color: "#008CA3" }}>WhatsApp</label>
-              <input value={phone} onChange={(e)=>setPhone(formatPhone(e.target.value))} required placeholder="(32) 99999-9999" inputMode="numeric" style={{ width: "100%", height: 44, borderRadius: 8, border: "1px solid #DDD", padding: "0 12px", color: "#111" }} />
-            </div>
-            <div>
-              <label className={`${ubuntu.variable}`} style={{ display: "block", fontFamily: "var(--font-ubuntu)", fontWeight: 700, marginBottom: 6, color: "#008CA3" }}>CEP</label>
-              <input value={cep} onChange={(e)=>setCep(formatCep(e.target.value))} required placeholder="36300-000" inputMode="numeric" style={{ width: "100%", height: 44, borderRadius: 8, border: "1px solid #DDD", padding: "0 12px", color: "#111" }} />
-            </div>
-            <div>
-              <label className={`${ubuntu.variable}`} style={{ display: "block", fontFamily: "var(--font-ubuntu)", fontWeight: 700, marginBottom: 6, color: "#008CA3" }}>Consumo mensal (kWh)</label>
-              <input value={consumo} onChange={(e)=>setConsumo(onlyDigits(e.target.value))} required placeholder="Ex.: 350" inputMode="numeric" style={{ width: "100%", height: 44, borderRadius: 8, border: "1px solid #DDD", padding: "0 12px", color: "#111" }} />
-            </div>
-          </div>
 
-          <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: 16 }}>
-            <label className={`${ubuntu.variable}`} style={{ fontFamily: "var(--font-ubuntu)", fontWeight: 700, color: "#008CA3" }}>Enviar por:</label>
-            <label className={`${ubuntu.variable}`} style={{ fontFamily: "var(--font-ubuntu)", display: "flex", alignItems: "center", gap: 6, color: "#000000" }}>
-              <input type="radio" checked={canal === "whatsapp"} onChange={()=>setCanal("whatsapp")} /> WhatsApp
-            </label>
-            <label className={`${ubuntu.variable}`} style={{ fontFamily: "var(--font-ubuntu)", display: "flex", alignItems: "center", gap: 6, color: "#000000" }}>
-              <input type="radio" checked={canal === "email"} onChange={()=>setCanal("email")} /> E-mail
-            </label>
-          </div>
+            {/* Channel Selection */}
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-8">
+              <label className={`${ubuntu.variable} font-bold text-[#008CA3] font-ubuntu text-sm sm:text-base`}>
+                Enviar por:
+              </label>
+              <div className="flex gap-6">
+                <label className={`${ubuntu.variable} flex items-center gap-2 text-black font-ubuntu cursor-pointer`}>
+                  <input 
+                    type="radio" 
+                    checked={canal === "whatsapp"} 
+                    onChange={() => setCanal("whatsapp")}
+                    className="text-[#008CA3] focus:ring-[#008CA3]"
+                  /> 
+                  <span className="text-sm sm:text-base">WhatsApp</span>
+                </label>
+                <label className={`${ubuntu.variable} flex items-center gap-2 text-black font-ubuntu cursor-pointer`}>
+                  <input 
+                    type="radio" 
+                    checked={canal === "email"} 
+                    onChange={() => setCanal("email")}
+                    className="text-[#008CA3] focus:ring-[#008CA3]"
+                  /> 
+                  <span className="text-sm sm:text-base">E-mail</span>
+                </label>
+              </div>
+            </div>
 
-          <div style={{ display: "flex", justifyContent: "center", marginTop: 24 }}>
-            <button type="submit" className={`${ubuntu.variable}`} style={{ height: 48, padding: "0 28px", background: "#008CA3", color: "#FFFFFF", border: 0, borderRadius: 8, cursor: "pointer", fontFamily: "var(--font-ubuntu)", fontWeight: 700 }}>
-              Pedir orçamento
-            </button>
-          </div>
-        </form>
-        <style jsx>{`
-          input::placeholder { color: #222; opacity: 1; }
-        `}</style>
+            {/* Submit Button */}
+            <div className="text-center">
+              <button 
+                type="submit" 
+                className={`${ubuntu.variable} bg-[#008CA3] hover:bg-[#007a8f] text-white font-bold py-3 sm:py-4 px-8 sm:px-12 rounded-lg transition-colors duration-200 font-ubuntu text-base sm:text-lg`}
+              >
+                Pedir orçamento
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
+      
+      <style jsx>{`
+        input::placeholder { 
+          color: #222 !important; 
+          opacity: 1 !important; 
+        }
+      `}</style>
     </section>
   );
 }
