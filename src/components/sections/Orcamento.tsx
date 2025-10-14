@@ -81,8 +81,7 @@ export default function Orcamento() {
                   onChange={(e) => setName(e.target.value)} 
                   required 
                   placeholder="Seu nome" 
-                  className="w-full h-10 sm:h-12 rounded-lg border border-gray-300 px-3 sm:px-4 text-gray-900 focus:border-[#008CA3] focus:outline-none focus:ring-2 focus:ring-[#008CA3]/20 transition-colors"
-                  style={{ '::placeholder': { color: '#222', opacity: 1 } }}
+                  className="w-full h-10 sm:h-12 rounded-lg border border-gray-300 px-3 sm:px-4 text-gray-900 focus:border-[#008CA3] focus:outline-none focus:ring-2 focus:ring-[#008CA3]/20 transition-colors placeholder:text-gray-600"
                 />
               </div>
               <div>
@@ -95,8 +94,7 @@ export default function Orcamento() {
                   required 
                   placeholder="(32) 99999-9999" 
                   inputMode="numeric"
-                  className="w-full h-10 sm:h-12 rounded-lg border border-gray-300 px-3 sm:px-4 text-gray-900 focus:border-[#008CA3] focus:outline-none focus:ring-2 focus:ring-[#008CA3]/20 transition-colors"
-                  style={{ '::placeholder': { color: '#222', opacity: 1 } }}
+                  className="w-full h-10 sm:h-12 rounded-lg border border-gray-300 px-3 sm:px-4 text-gray-900 focus:border-[#008CA3] focus:outline-none focus:ring-2 focus:ring-[#008CA3]/20 transition-colors placeholder:text-gray-600"
                 />
               </div>
               <div>
@@ -109,8 +107,7 @@ export default function Orcamento() {
                   required 
                   placeholder="36300-000" 
                   inputMode="numeric"
-                  className="w-full h-10 sm:h-12 rounded-lg border border-gray-300 px-3 sm:px-4 text-gray-900 focus:border-[#008CA3] focus:outline-none focus:ring-2 focus:ring-[#008CA3]/20 transition-colors"
-                  style={{ '::placeholder': { color: '#222', opacity: 1 } }}
+                  className="w-full h-10 sm:h-12 rounded-lg border border-gray-300 px-3 sm:px-4 text-gray-900 focus:border-[#008CA3] focus:outline-none focus:ring-2 focus:ring-[#008CA3]/20 transition-colors placeholder:text-gray-600"
                 />
               </div>
               <div>
@@ -123,8 +120,7 @@ export default function Orcamento() {
                   required 
                   placeholder="Ex.: 350" 
                   inputMode="numeric"
-                  className="w-full h-10 sm:h-12 rounded-lg border border-gray-300 px-3 sm:px-4 text-gray-900 focus:border-[#008CA3] focus:outline-none focus:ring-2 focus:ring-[#008CA3]/20 transition-colors"
-                  style={{ '::placeholder': { color: '#222', opacity: 1 } }}
+                  className="w-full h-10 sm:h-12 rounded-lg border border-gray-300 px-3 sm:px-4 text-gray-900 focus:border-[#008CA3] focus:outline-none focus:ring-2 focus:ring-[#008CA3]/20 transition-colors placeholder:text-gray-600"
                 />
               </div>
             </div>
@@ -169,12 +165,6 @@ export default function Orcamento() {
         </div>
       </div>
       
-      <style jsx>{`
-        input::placeholder { 
-          color: #222 !important; 
-          opacity: 1 !important; 
-        }
-      `}</style>
     </section>
   );
 }

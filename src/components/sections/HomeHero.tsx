@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Header from "@/components/header";
 import { ubuntu } from "@/lib/fonts";
@@ -43,7 +41,10 @@ export default function HomeHero() {
 
           {/* Piggy Bank Image */}
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end h-full">
-            <div className="relative w-full h-full max-h-[calc(100vh-200px)] transform scale-110 lg:scale-125">
+            <div 
+              className="relative w-full h-full max-h-[calc(100vh-200px)]"
+              style={{ transform: 'scale(1.2)' }}
+            >
               <Image 
                 src="/piggy.png" 
                 alt="Cofrinho" 
