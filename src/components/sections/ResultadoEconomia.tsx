@@ -138,7 +138,7 @@ export default function ResultadoEconomia() {
             <button
               onClick={() => {
                 const envNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "32999650094";
-                const msg = `Olá! Gostaria de saber mais sobre como economizar com Energia Solar. Vi que posso economizar aproximadamente ${brl(anos[4])} em 5 anos!`;
+                const msg = `Olá! Gostaria de saber mais sobre como economizar com Energia Solar. Minha conta de luz mensal atual é ${brl(valor)} e vi que posso economizar aproximadamente ${brl(anos[4])} em 5 anos!`;
                 const url = `https://wa.me/55${envNumber}?text=${encodeURIComponent(msg)}`;
                 window.open(url, "_blank");
               }}
