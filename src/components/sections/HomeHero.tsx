@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Header from "@/components/header";
 import { ubuntu } from "@/lib/fonts";
@@ -27,23 +29,39 @@ export default function HomeHero() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[calc(100vh-200px)]">
           {/* Text Content */}
           <div className="text-white order-2 lg:order-1">
-            <h1 className={`${ubuntu.variable} text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight font-ubuntu`}>
-              <span className="font-normal">Boas-vindas à </span>
-              <span className="font-bold">EletroV</span>
+            <h1 className={`${ubuntu.variable} text-[28px] sm:text-[35px] md:text-[42px] lg:text-[50px] xl:text-[56px] leading-tight font-ubuntu`}>
+              <span className="font-normal">Quer reduzir até </span>
+              <span className="font-bold">95% </span>
+              <span className="font-normal">da sua conta de luz?</span>
               <br />
-              <span className="font-bold">Precisão</span>
-              <span className="font-normal"> que transforma,</span>
+              <span className="font-normal">Fale agora com a </span>
+              <span className="font-bold">EletroV </span>
+              <span className="font-normal">no </span>
+              <span className="font-bold">WhatsApp </span>
+              <span className="font-normal">e</span>
               <br />
-              <span className="font-bold">energia</span>
-              <span className="font-normal"> que conecta!</span>
+              <span className="font-normal">receba seu </span>
+              <span className="font-bold">orçamento gratuito!</span>
             </h1>
+            
+            <button 
+              onClick={() => {
+                const envNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "32999650094";
+                const msg = `Olá! Gostaria de saber mais sobre como economizar com Energia Solar.`;
+                const url = `https://wa.me/55${envNumber}?text=${encodeURIComponent(msg)}`;
+                window.open(url, "_blank");
+              }}
+              className="mt-8 px-8 py-3 bg-white text-[#008CA3] font-bold rounded-full hover:bg-opacity-90 transition-all duration-300 shadow-lg"
+            >
+              Entre em contato no WhatsApp
+            </button>
           </div>
 
           {/* Piggy Bank Image */}
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end h-full">
             <div 
               className="relative w-full h-full max-h-[calc(100vh-200px)]"
-              style={{ transform: 'scale(1.2)' }}
+              style={{ transform: 'scale(1.6)' }}
             >
               <Image 
                 src="/piggy.png" 
