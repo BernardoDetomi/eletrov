@@ -51,7 +51,7 @@ export default function HomeHero() {
                 const url = `https://wa.me/55${envNumber}?text=${encodeURIComponent(msg)}`;
                 window.open(url, "_blank");
               }}
-              className="mt-8 px-8 py-3 bg-white text-[#008CA3] font-bold rounded-full hover:bg-opacity-90 transition-all duration-300 shadow-lg"
+              className="mt-8 px-8 py-3 bg-white text-[#008CA3] font-bold rounded-full hover:bg-[#008CA3] hover:text-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-white"
             >
               Entre em contato no WhatsApp
             </button>
