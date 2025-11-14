@@ -46,14 +46,14 @@ export default function HomeHero() {
             
             <button 
               onClick={() => {
-                const envNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "32999650094";
-                const msg = `Olá! Gostaria de saber mais sobre como economizar com Energia Solar.`;
-                const url = `https://wa.me/55${envNumber}?text=${encodeURIComponent(msg)}`;
-                window.open(url, "_blank");
+                const orcamentoSection = document.getElementById('orcamento');
+                if (orcamentoSection) {
+                  orcamentoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
               }}
               className="mt-8 px-8 py-3 bg-white text-[#008CA3] font-bold rounded-full hover:bg-[#008CA3] hover:text-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-white"
             >
-              Entre em contato no WhatsApp
+              Solicitar Orçamento Gratuito
             </button>
           </div>
 
