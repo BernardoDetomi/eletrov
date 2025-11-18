@@ -61,7 +61,7 @@ export default function HomeHero() {
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end h-full">
             <div 
               className="relative w-full h-full max-h-[calc(100vh-200px)]"
-              style={{ transform: 'scale(1.6)' }}
+              style={{ transform: 'scale(1.5)' }}
             >
               <Image 
                 src="/piggy.png" 

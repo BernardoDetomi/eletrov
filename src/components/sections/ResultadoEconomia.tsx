@@ -137,17 +137,17 @@ export default function ResultadoEconomia() {
           <div className="text-center">
             <button
               onClick={() => {
-                const envNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "32999650094";
-                const msg = `Olá! Gostaria de saber mais sobre como economizar com Energia Solar. Minha conta de luz mensal atual é ${brl(valor)} e vi que posso economizar aproximadamente ${brl(anos[4])} em 5 anos!`;
-                const url = `https://wa.me/55${envNumber}?text=${encodeURIComponent(msg)}`;
-                window.open(url, "_blank");
+                const contatoSection = document.getElementById('contato');
+                if (contatoSection) {
+                  contatoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
               }}
               className={`${ubuntu.variable} bg-green-500 hover:bg-green-600 text-white border-none rounded-xl px-8 sm:px-12 lg:px-16 py-4 sm:py-5 font-bold text-lg sm:text-xl lg:text-2xl cursor-pointer shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-1 font-ubuntu`}
               style={{
                 animation: "pulseColors 2s ease-in-out infinite"
               }}
             >
-              ECONOMIZAR
+              SOLICITAR ORÇAMENTO
             </button>
           </div>
         </div>
