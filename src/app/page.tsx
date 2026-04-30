@@ -9,6 +9,7 @@ import Cases from "@/components/sections/Cases";
 import Localidades from "@/components/sections/Localidades";
 import Orcamento from "@/components/sections/Orcamento";
 import Footer from "@/components/Footer";
+import FloatingWhatsApp from "@/components/floating-whatsapp";
 
 export default function Home() {
   return (
@@ -43,6 +44,7 @@ export default function Home() {
       <LazySection>
         <Footer />
       </LazySection>
-      </main>
+      <FloatingWhatsApp />
+    </main>
   );
 }

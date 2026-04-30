@@ -27,7 +27,7 @@ export default function Footer() {
               <div className={`${ubuntu.variable} text-white text-sm sm:text-base font-ubuntu mb-1`}>
                 victor.eletrov@gmail.com<br/>
                 (32) 99965-0094<br/>
-                @eletrov.energia
+                @eletrovenergia
               </div>
               
               {/* Social Icons */}
@@ -48,7 +48,7 @@ export default function Footer() {
                 
                 {/* Instagram */}
                 <a 
-                  href="https://instagram.com/eletrov.energia" 
+                  href="https://instagram.com/eletrovenergia" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="transition-transform duration-200 hover:scale-110"
