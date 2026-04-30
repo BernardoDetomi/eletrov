@@ -27,7 +27,7 @@ export default function SobreNos() {
           </div>
 
           {/* Logos */}
-          <div className="flex flex-col items-center lg:items-end space-y-8">
+          <div className="flex flex-col items-center space-y-8">
             <div className="relative w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 aspect-[312/300]">
               <Image 
                 src="/logo1.png" 
