@@ -10,6 +10,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
             {/* Logo */}
             <div className="flex justify-center lg:justify-start">
+              <a href="#home" className="cursor-pointer">
               <Image 
                 src="/marca.png" 
                 alt="Marca" 
@@ -17,6 +18,7 @@ export default function Footer() {
                 height={130} 
                 className="w-44 sm:w-52 lg:w-56 h-auto"
               />
+              </a>
             </div>
             
             {/* Contatos */}
